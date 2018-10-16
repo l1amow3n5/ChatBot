@@ -13,17 +13,21 @@ public class ChatBotController
 		simpleBot = new ChatBot();
 	}
 	
-	public void interactWithChatBot(String userInput)
+	public String interactWithChatBot(String text)
 	{
-		
+		String output = "";
+		String userResponse = JOptionPane.showInputDialog(null, "Hi whats up??");
+		output = simpleBot.processText(userResponse);	
+		return output;
 	}
+	
 	public void start()
 	{
 		String userInput = "";
 		
-		while(!userInput.equals("quit"))
+		while(!userInput.equalsIgnoreCase("quit"))
 		{
-			userInput = JOptionPane.showInputDialog(null, "Type quit to leave.");
+			userInput = interactWithChatBot(userInput);
 		}
 	}
 }

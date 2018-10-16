@@ -28,7 +28,20 @@ public class ChatBot
 		responseList.add("I only serve Mother Russia!!");
 		responseList.add("Why do you insult me??");
 		
+		spookyList.add("Halloween is better than Cashmas!");
+		spookyList.add("Jack Skellington!!!");
+		spookyList.add("Do you like scary movies?");
+		
 	
+	}
+	
+	public String processText(String userText)
+	{
+		String answer = "";
+		
+		answer += "You said: " + userText;
+		
+		return answer; 
 	}
 	
 	public String getContent()
