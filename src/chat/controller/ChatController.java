@@ -1,24 +1,31 @@
-package controller;
+package chat.controller;
 
-import model.ChatBot;
 import javax.swing.JOptionPane;
+
+import chat.model.ChatBot;
+
 import java.util.ArrayList;
 
-public class ChatBotController
+public class ChatController
 {
 	private ChatBot simpleBot;
 	
-	public ChatBotController()
+	public ChatController()
 	{
 		simpleBot = new ChatBot();
 	}
 	
-	public String interactWithChatBot(String text)
+	public String interactWithChatbot(String text)
 	{
 		String output = "";
 		String userResponse = JOptionPane.showInputDialog(null, "Hi whats up??");
 		output = simpleBot.processText(userResponse);	
 		return output;
+	}
+	
+	public ChatBot getChatbot()
+	{
+		return simpleBot;
 	}
 	
 	public void start()
@@ -27,7 +34,7 @@ public class ChatBotController
 		
 		while(!userInput.equalsIgnoreCase("quit"))
 		{
-			userInput = interactWithChatBot(userInput);
+			userInput = interactWithChatbot(userInput);
 		}
 	}
 }
