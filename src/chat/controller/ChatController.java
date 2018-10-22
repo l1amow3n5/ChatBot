@@ -2,17 +2,17 @@ package chat.controller;
 
 import javax.swing.JOptionPane;
 
-import chat.model.ChatBot;
+import chat.model.Chatbot;
 
 import java.util.ArrayList;
 
 public class ChatController
 {
-	private ChatBot simpleBot;
+	private Chatbot simpleBot;
 	
 	public ChatController()
 	{
-		simpleBot = new ChatBot();
+		simpleBot = new Chatbot();
 	}
 	
 	public String interactWithChatbot(String text)
@@ -23,7 +23,7 @@ public class ChatController
 		return output;
 	}
 	
-	public ChatBot getChatbot()
+	public Chatbot getChatbot()
 	{
 		return simpleBot;
 	}
