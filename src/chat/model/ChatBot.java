@@ -20,6 +20,24 @@ public class Chatbot
 		buildTheLists();
 	}
 	
+	public boolean legitimacyChecker(String input)
+	{
+		boolean isValid = true;
+		if ( input == null)
+		{
+			isValid = false;
+		}
+		else if (input.length() < 2) 
+		{
+			isValid = false;
+		}
+		else if (input.contains("sdf") || input.contains("cvb"))
+		{
+			isValid = false;
+		}
+		return isValid;
+	}
+	
 	private void buildTheLists()
 	{
 		responseList.add("Hello! How are you?");
@@ -63,15 +81,15 @@ public class Chatbot
 		return answer; 
 	}
 	
-	public String getResponseList()
-	{
-		return responseList;
-	}
+	//public String getResponseList()
+	//{
+	//	return responseList;
+	//}
 	
-	public String getSpookyList()
-	{
-		return spookyList:
-	}
+	//public String getSpookyList()
+	//{
+	//	return spookyList;
+	//}
 	
 	public String getContent()
 	{
@@ -92,7 +110,10 @@ public class Chatbot
 	{
 		return botName;
 	}
-	
+	//public void setResponseList()
+	//{
+	//	this.responseList = responseList;
+	//}
 	public void setContent()
 	{
 		this.content = content;
