@@ -37,4 +37,8 @@ public class ChatController
 			userInput = interactWithChatbot(userInput);
 		}
 	}
+	public String useChatbotCheckers(String input)
+	{
+		return input;
+	}
 }

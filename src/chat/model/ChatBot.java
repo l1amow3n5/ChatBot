@@ -13,11 +13,21 @@ public class Chatbot
 		this.currentUser = "unnamed user";
 		this.botName = "c-bot";
 		this.joke = "Why did the chicken cross the road?";
+		this.content = "sample content";
 		
 		this.responseList = new ArrayList<String>();
 		this.spookyList = new ArrayList <String>();
 		
 		buildTheLists();
+	}
+	
+	public boolean contentChecker(String input)
+	{
+		boolean 
+		
+		
+		
+		return
 	}
 	
 	public boolean legitimacyChecker(String input)
@@ -34,6 +44,24 @@ public class Chatbot
 		else if (input.contains("sdf") || input.contains("cvb"))
 		{
 			isValid = false;
+		}
+		return isValid;
+	}
+	
+	public boolean spookyChecker(String input)
+	{
+		boolean isValid = false;
+		if (input.contains("Halloween"))
+		{
+			isValid = true;
+		}
+		else if (input.contains("Easter"))
+		{
+			isValid = false;
+		}
+		else 
+		{
+			isValid = true;
 		}
 		return isValid;
 	}
@@ -81,15 +109,15 @@ public class Chatbot
 		return answer; 
 	}
 	
-	//public String getResponseList()
-	//{
-	//	return responseList;
-	//}
+	public ArrayList<String> getResponseList()
+	{
+		return responseList;
+	}
 	
-	//public String getSpookyList()
-	//{
-	//	return spookyList;
-	//}
+	public ArrayList<String> getSpookyList()
+	{
+		return spookyList;
+	}
 	
 	public String getContent()
 	{
@@ -110,10 +138,10 @@ public class Chatbot
 	{
 		return botName;
 	}
-	//public void setResponseList()
-	//{
-	//	this.responseList = responseList;
-	//}
+	/*public void setSpookylist()
+	{
+		this.spookyList = spookyList;
+	}*/
 	public void setContent()
 	{
 		this.content = content;
