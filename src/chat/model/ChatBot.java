@@ -109,11 +109,16 @@ public class Chatbot
 			
 	}
 	
+	public Chatbot(String string)
+	{
+		content = "sample content";
+	}
+	
 	public String processText(String userText)
 	{
 		String answer = "";
 		
-		answer += "Chatbot says: " + userText;
+		answer += "You said: " + userText + ". Chatbot says: " + responseList ;
 		
 		return answer; 
 	}
