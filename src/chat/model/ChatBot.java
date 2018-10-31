@@ -23,11 +23,11 @@ public class Chatbot
 	
 	public boolean contentChecker(String input)
 	{
-		boolean 
+		boolean legit = false;
 		
 		
 		
-		return
+		return legit; 
 	}
 	
 	public boolean legitimacyChecker(String input)
@@ -100,13 +100,29 @@ public class Chatbot
 	
 	}
 	
+	public Chatbot(String botName, String content, String joke, String currentUser)
+	{
+		this.botName = botName;
+		this.content = content;
+		this.joke = joke;
+		this.currentUser = currentUser;
+			
+	}
+	
 	public String processText(String userText)
 	{
 		String answer = "";
 		
-		answer += "You said: " + userText;
+		answer += "Chatbot says: " + userText;
 		
 		return answer; 
+	}
+	public boolean testChatbotString(String input)
+	{
+		boolean isValid = true;
+		
+		return isValid;
+			
 	}
 	
 	public ArrayList<String> getResponseList()
