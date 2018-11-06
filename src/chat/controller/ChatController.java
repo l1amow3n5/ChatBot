@@ -15,11 +15,21 @@ public class ChatController
 		simpleBot = new Chatbot();
 	}
 	
-	public String interactWithChatbot(String text)
+	public String interactWithChatbot(String userInput)
 	{
 		String output = "";
-		String userResponse = JOptionPane.showInputDialog(null, "Hi whats up??");
-		output = simpleBot.processText(userResponse);	
+			
+		
+		
+		if (userInput == null)
+		{
+			output += "You supplied null";
+		}
+		else
+		{
+			output = JOptionPane.showInputDialog(null, "Hi whats up??");
+			output += simpleBot.processText(userInput);
+		}
 		return output;
 	}
 	

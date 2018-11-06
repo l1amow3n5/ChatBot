@@ -25,9 +25,9 @@ public class Chatbot
 	{
 		boolean legit = false;
 		
-		if(input.contains(content))
+		if(input.contains(content + "text"))
 		{
-			legit = true;
+			legit = false;
 		}
 		else if (input.contains("text" + content + "text"))
 		{
@@ -37,11 +37,10 @@ public class Chatbot
 		{
 			legit = false; 
 		}
-		else if (input.contains(content + "text")) 
+		else if (input.contains(content)) 
 		{
-			legit = false;
+			legit = true;
 		}
-		else if ()
 		
 		return legit; 
 	}
@@ -134,9 +133,13 @@ public class Chatbot
 	{
 		String answer = "";
 		
-		answer += "You said: " + userText + ". Chatbot says: " + responseList ;
+		answer += "You said: " + userText + ". Chatbot says: " + responseList; 
 		
-		return answer; 
+		if(userText != null && userText.contains(content))
+		{
+			answer = answer + " You said the special words";
+		}		
+			return answer; 
 	}
 	public boolean testChatbotString(String input)
 	{
