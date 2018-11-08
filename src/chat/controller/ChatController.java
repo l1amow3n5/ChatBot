@@ -49,7 +49,13 @@ public class ChatController
 	}
 	public String useChatbotCheckers(String input)
 	{
-		return input;
+		String output = "";
+		
+		if (input == "spooky")
+		{
+			return "Halloween";
+		}
+		return output; 
 	}
 	
 }

@@ -131,9 +131,12 @@ public class Chatbot
 	
 	public String processText(String userText)
 	{
+		
+		int randomIndex = (int) (Math.random() * responseList.size());
+		
 		String answer = "";
 		
-		answer += "You said: " + userText + ". Chatbot says: " + responseList; 
+		answer += "You said: " + userText + ". Chatbot says: " + responseList.get(randomIndex); 
 		
 		if(userText != null && userText.contains(content))
 		{
