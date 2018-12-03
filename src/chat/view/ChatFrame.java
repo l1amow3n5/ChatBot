@@ -24,6 +24,6 @@ public class ChatFrame extends JFrame
 		this.setTitle("ChatBot");
 		this.setSize(1000, 500);
 		this.setResizable(false);
-		
+		this.setVisible(true);
 	}
 }
