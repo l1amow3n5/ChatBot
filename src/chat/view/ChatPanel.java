@@ -23,7 +23,11 @@ public class ChatPanel extends JPanel
 		super();
 		
 		this.appController = appController;
-		
+		this.chatButton = new JButton("Button");
+		this.appLayout = new SpringLayout();
+		this.inputField = new JTextField();
+		this.chatArea = new JTextArea();
+		this.chatPane = new JScrollPane();
 		
 		
 		setupPanel();
@@ -51,6 +55,17 @@ public class ChatPanel extends JPanel
 	private void setupLayout()
 	{
 		
+	}
+	
+	private void setupListeners()
+	{
+		chatButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent mouseClick)
+			{
+				//changeBackgroundColor();
+			}
+		});
 	}
 
 }

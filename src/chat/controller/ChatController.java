@@ -7,17 +7,17 @@ import chat.model.Chatbot;
 
 import java.util.ArrayList;
 
-import chat.view.ChatFrame;
+//import chat.view.ChatFrame;
 
 public class ChatController
 {
-	private ChatFrame appFrame;
+	//private ChatFrame appFrame;
 	
 	private Chatbot simpleBot;
 	
 	public ChatController()
 	{
-		appFrame = new ChatFrame(this);
+		//appFrame = new ChatFrame(this);
 		simpleBot = new Chatbot();
 	}
 	
