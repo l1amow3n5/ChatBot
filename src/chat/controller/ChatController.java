@@ -7,36 +7,39 @@ import chat.model.Chatbot;
 
 import java.util.ArrayList;
 
-//import chat.view.ChatFrame;
+import chat.view.ChatFrame;
 
 public class ChatController
 {
-	//private ChatFrame appFrame;
-	
 	private Chatbot simpleBot;
+	private ChatFrame appFrame;
+	
 	
 	public ChatController()
 	{
-		//appFrame = new ChatFrame(this);
+		
 		simpleBot = new Chatbot();
+		appFrame = new ChatFrame(this);
 	}
 	
-	public String interactWithChatbot(String userInput)
+	public String interactWithChatbot(String text)
 	{
 		String output = "";
-			
+		output += simpleBot.processText(text);
+		return output;
 		
-		
+		/*
 		if (userInput == null)
 		{
 			output += "You supplied null";
 		}
 		else
 		{
-			output = JOptionPane.showInputDialog(null, "Hi whats up??");
-			output += simpleBot.processText(userInput);
+			//output = JOptionPane.showInputDialog(null, "Hi whats up??");
+			//output += simpleBot.processText(userInput);
 		}
 		return output;
+		*/
 	}
 	
 	public Chatbot getChatbot()
@@ -44,24 +47,36 @@ public class ChatController
 		return simpleBot;
 	}
 	
+	public String useChatbotCheckers(String text)
+	{
+		String testedValues = "The following checkers passed:";
+		if (simpleBot.contentChecker(text))
+		{
+			testedValues += "\nContent Checker";
+		}
+		if (simpleBot.spookyChecker(text))
+		{
+			testedValues += "\nSpooky Checker Happ Halloween" ;
+		}
+		if (simpleBot.legitimacyChecker(text))
+		{
+			testedValues += "\nLegitimacy Checker";
+		}
+		return testedValues; 
+		
+	}
+	
 	public void start()
 	{
+		/*
 		String userInput = "";
 		
 		while(!userInput.equalsIgnoreCase("quit"))
 		{
 			userInput = interactWithChatbot(userInput);
 		}
+		*/
 	}
-	public String useChatbotCheckers(String input)
-	{
-		String output = "";
-		
-		if (input == "spooky")
-		{
-			return "Halloween";
-		}
-		return output; 
-	}
+	
 	
 }

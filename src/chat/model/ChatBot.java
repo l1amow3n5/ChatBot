@@ -132,18 +132,38 @@ public class Chatbot
 	public String processText(String userText)
 	{
 		
-		int randomIndex = (int) (Math.random() * responseList.size());
+		//int randomIndex = (int) (Math.random() * responseList.size());
 		
 		String answer = "";
 		
+		if (!legitimacyChecker(userText))
+		{
+			answer += "You really should not send null \n";
+		}
+		else
+		{
+			answer += "You said: " + userText + "\n";
+			
+			if(contentChecker(userText))
+			{
+				answer += "You said the special words. \n";
+			}
+			int randomIndex = (int) (responseList.size() * Math.random());
+			answer += "Chatbot says: " + responseList.get(randomIndex) + "\n";
+		}
+		
+		return answer;
+		/*
 		answer += "You said: " + userText + ". Chatbot says: " + responseList.get(randomIndex); 
 		
 		if(userText != null && userText.contains(content))
 		{
-			answer = answer + " You said the special words";
+			answer = answer + " You said the special words. \n";
 		}		
-			return answer; 
+			return answer;
+			*/ 
 	}
+	/*
 	public boolean testChatbotString(String input)
 	{
 		boolean isValid = true;
@@ -151,7 +171,7 @@ public class Chatbot
 		return isValid;
 			
 	}
-	
+	*/
 	public ArrayList<String> getResponseList()
 	{
 		return responseList;
