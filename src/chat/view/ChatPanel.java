@@ -99,6 +99,7 @@ public class ChatPanel extends JPanel
 				String output = "";
 				output = appController.interactWithChatbot(input);
 				chatField.setText("");
+				chatArea.append(output);
 				chatArea.setCaretPosition(chatArea.getDocument().getLength());
 			}
 		});
