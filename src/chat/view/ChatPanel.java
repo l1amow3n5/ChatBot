@@ -11,32 +11,44 @@ import java.awt.SystemColor;
 public class ChatPanel extends JPanel
 {
 	private ChatController appController;
-	private JLabel responseLabel;
+	//private JLabel responseLabel;
 	private JButton chatButton;
+	private JButton checkerButton;
+	private JButton loadButton;
+	private JButton saveButton;
 	private SpringLayout appLayout;
-	private JTextField inputField;
+	private JTextField chatField;
+	//private JTextField chatField;
 	private JTextArea chatArea;
 	private JScrollPane chatPane;
 	
-	public ChatPanel(ChatController appController)
+	public ChatPanel(ChatController app)
 	{
 		super();
 		
-		this.appController = appController;
-		this.chatButton = new JButton("Button");
+		this.appController = app;
+		this.chatButton = new JButton("Chat");
+		this.checkerButton = new JButton("Check Text");
+		this.loadButton = new JButton("Load");
+		this.saveButton = new JButton("Save");
 		this.appLayout = new SpringLayout();
-		this.inputField = new JTextField();
-		this.chatArea = new JTextArea();
+		this.chatField = new JTextField("Talk to the bot here", 50);
+		this.chatArea = new JTextArea("Chat Area", 20, 50);
 		this.chatPane = new JScrollPane();
 		
-		
+		setupScrollPane();
 		setupPanel();
 		setupLayout();
 		setupListeners();
 	}
 	
-	private void setupPanel()
+	private void setupScrollPane()
 	{
+		
+	}
+	
+	private void setupPanel()
+	{	/*
 		this.setBackground(Color.MAGENTA);
 		SpringLayout springLayout = new SpringLayout();
 		springLayout.putConstraint(SpringLayout.NORTH, chatButton, 246, SpringLayout.SOUTH, responseLabel);
@@ -50,6 +62,7 @@ public class ChatPanel extends JPanel
 		setLayout(springLayout);
 		this.add(responseLabel);
 		this.add(chatButton);
+		*/
 	}
 	
 	private void setupLayout()
@@ -59,13 +72,14 @@ public class ChatPanel extends JPanel
 	
 	private void setupListeners()
 	{
+		/*
 		chatButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent mouseClick)
 			{
 				//changeBackgroundColor();
 			}
-		});
+		}); */
 	}
 
 }
