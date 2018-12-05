@@ -37,6 +37,8 @@ public class ChatPanel extends JPanel
 		this.chatArea = new JTextArea("Chat Area", 20, 50);
 		this.chatPane = new JScrollPane();
 		
+		
+		
 		setupScrollPane();
 		setupPanel();
 		setupLayout();
@@ -58,7 +60,7 @@ public class ChatPanel extends JPanel
 	{	
 		this.setLayout(appLayout);
 		this.setPreferredSize(new Dimension(800, 600));
-		this.setBackground(Color.MAGENTA);
+		this.setBackground(Color.BLUE);
 		this.add(chatPane);
 		this.add(chatButton);
 		this.add(saveButton);
@@ -69,7 +71,12 @@ public class ChatPanel extends JPanel
 	
 	private void setupLayout()
 	{
-		
+		appLayout.putConstraint(SpringLayout.NORTH, chatPane, 50, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.WEST, chatPane, 50, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.EAST, chatPane, -50, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.NORTH, chatField, 30, SpringLayout.SOUTH, chatPane);
+		appLayout.putConstraint(SpringLayout.WEST, chatField, 0, SpringLayout.WEST, chatPane);
+		appLayout.putConstraint(SpringLayout.EAST, chatField, 0, SpringLayout.EAST, chatPane);
 	}
 	
 	private void setupListeners()
