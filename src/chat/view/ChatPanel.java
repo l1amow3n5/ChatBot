@@ -5,8 +5,9 @@ import chat.controller.ChatController;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
-import java.awt.Font;
-import java.awt.SystemColor;
+//import java.awt.Font;
+//import java.awt.SystemColor;
+import java.awt.Dimension;
 
 public class ChatPanel extends JPanel
 {
@@ -44,25 +45,26 @@ public class ChatPanel extends JPanel
 	
 	private void setupScrollPane()
 	{
+		chatArea.setEditable(false);
+		chatArea.setLineWrap(true);
+		chatArea.setWrapStyleWord(true);
 		
+		chatPane.setViewportView(chatArea);
+		chatPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+		chatPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 	}
 	
 	private void setupPanel()
-	{	/*
+	{	
+		this.setLayout(appLayout);
+		this.setPreferredSize(new Dimension(800, 600));
 		this.setBackground(Color.MAGENTA);
-		SpringLayout springLayout = new SpringLayout();
-		springLayout.putConstraint(SpringLayout.NORTH, chatButton, 246, SpringLayout.SOUTH, responseLabel);
-		springLayout.putConstraint(SpringLayout.WEST, chatButton, 0, SpringLayout.WEST, responseLabel);
-		springLayout.putConstraint(SpringLayout.SOUTH, chatButton, 419, SpringLayout.SOUTH, responseLabel);
-		springLayout.putConstraint(SpringLayout.EAST, chatButton, 598, SpringLayout.WEST, this);
-		springLayout.putConstraint(SpringLayout.WEST, responseLabel, 314, SpringLayout.WEST, this);
-		springLayout.putConstraint(SpringLayout.EAST, responseLabel, -408, SpringLayout.EAST, this);
-		springLayout.putConstraint(SpringLayout.NORTH, responseLabel, 10, SpringLayout.NORTH, this);
-		springLayout.putConstraint(SpringLayout.SOUTH, responseLabel, 51, SpringLayout.NORTH, this);
-		setLayout(springLayout);
-		this.add(responseLabel);
+		this.add(chatPane);
 		this.add(chatButton);
-		*/
+		this.add(saveButton);
+		this.add(loadButton);
+		this.add(checkerButton);
+		this.add(chatField);
 	}
 	
 	private void setupLayout()
