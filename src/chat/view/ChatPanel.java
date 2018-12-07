@@ -111,11 +111,12 @@ public class ChatPanel extends JPanel
 			}
 		});
 		
-		resetButton.addActionListeners(new ActionListeners()
+		resetButton.addActionListener(new ActionListener()
 			{
 				public void actionPerformed(ActionEvent click)
 				{
-					ChatArea.setText("");
+					chatArea.setText("");
+					
 				}
 				
 			});
