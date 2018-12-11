@@ -8,6 +8,7 @@ import java.awt.Color;
 //import java.awt.Font;
 //import java.awt.SystemColor;
 import java.awt.Dimension;
+import chat.controller.IOController;
 
 public class ChatPanel extends JPanel
 {
@@ -115,11 +116,43 @@ public class ChatPanel extends JPanel
 			{
 				public void actionPerformed(ActionEvent click)
 				{
-					chatArea.setText("");
+					
 					
 				}
 				
 			});
+		
+		saveButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String chatText = chatArea.getText();
+				String path = "";
+				IOController.saveText(appController, path, chatText);
+				chatArea.setText("chat saved!");
+			}
+			
+		});
+		
+		loadButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+				
+			}
+			
+		});
+		
+		checkerButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+				
+			}
+			
+		});
 	}
 	
 
