@@ -42,10 +42,7 @@ public class ChatController
 		*/
 	}
 	
-	public Chatbot getChatbot()
-	{
-		return simpleBot;
-	}
+	
 	
 	public String useChatbotCheckers(String text)
 	{
@@ -78,5 +75,23 @@ public class ChatController
 		*/
 	}
 	
+	private void close()
+	{
+		System.exit(0);
+	}
 	
+	public void handleErrors(Exception error)
+	{
+		JOptionPane.showMessageDialog(appFrame, error.getMessage());
+	}
+	
+	public ChatFrame getAppFrame()
+	{
+		return appFrame;
+	}
+	
+	public Chatbot getChatbot()
+	{
+		return simpleBot;
+	}
 }
