@@ -1,0 +1,11 @@
+Chat Area
+You said: Talk to the bot here
+Chatbot says: Do you know Josh?
+You really should not send null 
+You really should not send null 
+You really should not send null 
+You really should not send null 
+You really should not send null 
+You really should not send null 
+You said: Zack help me
+Chatbot says: Goodbye - no more talking!
