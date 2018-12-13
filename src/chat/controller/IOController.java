@@ -57,6 +57,8 @@ public class IOController
 				{
 					contents += fileScanner.nextLine() + "\n";
 				}
+				fileScanner.close();
+				
 			}
 		}
 		catch(IOException error)
@@ -69,4 +71,6 @@ public class IOController
 		}
 		return contents;
 	}
+	
+	
 }
