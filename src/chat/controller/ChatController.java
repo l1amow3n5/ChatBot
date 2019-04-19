@@ -1,4 +1,3 @@
-
 package chat.controller;
 
 import javax.swing.JOptionPane;
