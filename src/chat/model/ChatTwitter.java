@@ -15,6 +15,7 @@ public class ChatTwitter
 	private List<String> tweetedWords;
 	private long totalWordCount;
 	private HashMap<String, Integer> wordsAndCount;
+	private String tweetEnd;
 	
 	public ChatTwitter(ChatController app)
 	{
@@ -24,13 +25,14 @@ public class ChatTwitter
 		this.tweetedWords = new ArrayList<String>();
 		this.wordsAndCount = new HashMap<String, Integer>();
 		this.totalWordCount = 0;
+		this.tweetEnd = " @CodyHenrichsen, @CSCheerleader, @CTECNow, @ChatbotCTEC";
 	}
 	
 	public void sendTweet(String textToTweet)
 	{
 		try
 		{
-			chatTwitter.updateStatus(textToTweet + " @ChatbotCTEC");
+			chatTwitter.updateStatus(textToTweet + tweetEnd);
 		}
 		catch(TwitterException tweetError)
 		{
